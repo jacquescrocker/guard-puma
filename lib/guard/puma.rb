@@ -18,6 +18,7 @@ module Guard
       :environment => default_env,
       :start_on_start => true,
       :force_run => false,
+      :quiet => true,
       :timeout => 20,
       :debugger => false
     }

@@ -31,7 +31,11 @@ module Guard
         puma_options["--#{opt}"] = options[opt] if options[opt]
       end
       puma_options = puma_options.to_a.flatten
-      puma_options << '-q' if @quiet
+      if @quiet
+        puma_options << '-q'
+      else
+        puma_options << '-v'
+      end
       @cmd_opts = puma_options.join ' '
     end
 
@@ -67,4 +71,3 @@ module Guard
 
   end
 end
-
